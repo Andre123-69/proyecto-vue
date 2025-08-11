@@ -1,0 +1,23 @@
+<template>
+  <div class="container">
+    <Sidebar />
+    <div class="content">
+      <router-view />
+    </div>
+  </div>
+</template>
+
+<script setup>
+import Sidebar from "@/components/Sidebar.vue";
+</script>
+
+<style scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1;
+  padding: 20px;
+}
+</style>

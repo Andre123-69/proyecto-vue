@@ -1,5 +1,5 @@
 <!-- eslint-disable vue/multi-word-component-names -->
-// eslint-disable-next-line vue/multi-word-component-names
+
 <template>
   <h1>Hello</h1>
   <button @click="incrementar">Increment</button>
@@ -8,15 +8,15 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const count = ref(0)
+const count = ref(0);
 const incrementar = () => {
-  count.value++
-}
+  count.value++;
+};
 const decrementar = () => {
-  count.value--
-}
+  count.value--;
+};
 </script>
 
 <style scoped>
