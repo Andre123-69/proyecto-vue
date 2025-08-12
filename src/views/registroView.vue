@@ -1,19 +1,33 @@
 <template>
   <div>
     <h2>Formulario de Registros</h2>
-    <Form action="">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" placeholder="Ingrese nombre" />
+    <Form :validation-schema="validationSchema" @submit="onSubmit">
+      <div class="form">
+        <label for="nombre">Nombre:</label>
+        <Field type="text" name="nombre" id="nombre" placeholder="Ingrese nombre" />
+        <ErrorMessage name="nombre" />
+      </div>
 
-      <label for="email">Email:</label>
-      <input type="text" id="email" placeholder="Ingrese email" />
+      <div class="form">
+        <label for="email">Email:</label>
+        <Field type="text" name="email" id="email" placeholder="Ingrese email" />
+        <ErrorMessage name="email" />
+      </div>
 
-      <button type="submit">Registrar</button>
+      <div class="form">
+        <button type="submit">Registrar</button>
+      </div>
     </Form>
   </div>
 </template>
+
 <script setup>
-import { Form } from "vee-validate";
+import { Form, Field, ErrorMessage } from "vee-validate";
+import validationSchema from "@/modules/registro/schemas/validationSchema.js";
+
+const onSubmit = () => {
+  console.log("Formulario enviado con éxito");
+};
 </script>
 <style scoped>
 form {
