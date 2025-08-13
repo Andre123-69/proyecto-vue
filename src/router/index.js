@@ -21,7 +21,7 @@ const router = createRouter({
     {
       path: "/Productos",
       name: "Productos",
-      component: () => import("../api/apiPoductos.vue"),
+      component: () => import("../api/apiPoductos"),
     },
   ],
 });

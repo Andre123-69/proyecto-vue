@@ -1,27 +1,44 @@
 <template>
   <div>
-    <h2>Formulario de Registros</h2>
-    <Form :validation-schema="validationSchema" @submit="onSubmit">
-      <div class="form">
-        <label for="nombre">Nombre:</label>
-        <Field
-          v-model="nombre"
-          type="text"
-          name="nombre"
-          id="nombre"
-          placeholder="Ingrese nombre"
-        />
-        <ErrorMessage name="nombre" />
-      </div>
+    <h2 class="text-2xl font-bold mb-4">Formulario de Registros</h2>
+    <Form :validation-schema="validationSchema" @submit="onSubmit" class="flex flex-col w-full">
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-col md:flex-row items-center gap-4">
+          <div class="flex flex-col w-full md:w-1/2">
+            <label for="nombre" class="mb-1 font-semibold">Nombre:</label>
+            <Field
+              class="border border-gray-300 rounded p-2 w-full"
+              v-model="nombre"
+              type="text"
+              name="nombre"
+              id="nombre"
+              placeholder="Ingrese nombre"
+            />
+            <ErrorMessage name="nombre" class="text-red-500 text-xs mt-1" />
+          </div>
 
-      <div class="form">
-        <label for="email">Email:</label>
-        <Field v-model="email" type="text" name="email" id="email" placeholder="Ingrese email" />
-        <ErrorMessage name="email" />
-      </div>
+          <div class="flex flex-col w-full md:w-1/2">
+            <label for="email" class="mb-1 font-semibold">Email:</label>
+            <Field
+              class="border border-gray-300 rounded p-2 w-full"
+              v-model="email"
+              type="text"
+              name="email"
+              id="email"
+              placeholder="Ingrese email"
+            />
+            <ErrorMessage name="email" class="text-red-500 text-xs mt-1" />
+          </div>
+        </div>
 
-      <div class="form">
-        <button type="submit">Registrar</button>
+        <div>
+          <button
+            type="submit"
+            class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 w-full md:w-auto"
+          >
+            Registrar 
+          </button>
+        </div>
       </div>
     </Form>
   </div>
@@ -42,30 +59,4 @@ const onSubmit = () => {
   registrarStore.guardarregistro(nombre.value, email.value);
 };
 </script>
-<style scoped>
-form {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-}
-
-input {
-  margin-bottom: 10px;
-  padding: 8px;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-}
-
-button {
-  padding: 10px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #218838;
-}
-</style>
+<style scoped></style>

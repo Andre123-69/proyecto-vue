@@ -2,8 +2,8 @@
 
 <template>
   <h1>Hello</h1>
-  <button @click="incrementar">Increment</button>
-  <button @click="decrementar">Decrement</button>
+  <button @click="incrementar" class="bg-blue-500 text-white px-4 py-1 rounded mr-2">Increment</button>
+  <button @click="decrementar" class="bg-red-500 text-white px-4 py-1 rounded">Decrement</button>
   <p>Count: {{ count }}</p>
 </template>
 
@@ -19,11 +19,4 @@ const decrementar = () => {
 };
 </script>
 
-<style scoped>
-button {
-  margin-right: 10px;
-}
-p {
-  color: red;
-}
-</style>
+<style scoped></style>

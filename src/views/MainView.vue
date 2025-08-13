@@ -1,5 +1,6 @@
 <template>
-  <div class="container">
+  <Headers></Headers>
+  <div class="">
     <Sidebar />
     <div class="content">
       <router-view />
@@ -9,15 +10,9 @@
 
 <script setup>
 import Sidebar from "@/components/Sidebar.vue";
+import Headers from "@/components/Headers.vue";
 </script>
 
 <style scoped>
-.container {
-  display: flex;
-  flex-direction: column;
-}
-.content {
-  flex: 1;
-  padding: 20px;
-}
+
 </style>

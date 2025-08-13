@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <div class="">
     <h2>Lista de Tareas</h2>
     <input
+      class="border border-gray-300 rounded p-1 mb-2"
       type="text"
       v-model="nuevaTarea"
       placeholder="Añadir nueva tarea"
@@ -11,7 +12,9 @@
       <li v-for="(tarea, index) in tareas" :key="index">
         {{ tarea }}
 
-        <button @click="deleteTarea(index)">Eliminar</button>
+        <button @click="deleteTarea(index)" class="bg-red-500 text-white px-4 py-0.5 rounded mb-2">
+          Eliminar
+        </button>
       </li>
     </ul>
   </div>
